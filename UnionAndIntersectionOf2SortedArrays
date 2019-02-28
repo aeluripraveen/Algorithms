@@ -1,0 +1,67 @@
+public class UnionAndIntersectionOf2SortedArrays {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter size of an array A:");
+		int n = sc.nextInt();
+		System.out.println("Enter array A elements:");
+		int A[] = new int[n];
+		for (int i = 0; i < n; i++) {
+			A[i] = sc.nextInt();
+		}
+		System.out.println("Please enter size of an array B:");
+		int m = sc.nextInt();
+		System.out.println("Enter array B elements:");
+		int B[] = new int[m];
+		for (int i = 0; i < m; i++) {
+			B[i] = sc.nextInt();
+		}
+		System.out.println("Union of A & B: " );
+		Union(A, B);
+		System.out.println("Intersction of A & B: " );
+		Intersect(A, B);
+	}
+	public static void Union(int []A, int []B){
+		int i=0,j=0;
+		for(;i<A.length && j<B.length ;){
+			if(A[i]<B[j]){
+				System.out.print(A[i]);
+				i++;
+			}else if(A[i]>B[j]){
+				System.out.print(B[j]);
+				j++;
+			}else{
+				System.out.print(A[i]);
+				i++;
+				j++;
+			}
+			System.out.print(" ");
+		}
+		while(i<A.length){
+			System.out.println(A[i]);
+			i++;
+			System.out.print(" ");
+		}
+		while(j<B.length){
+			System.out.println(B[j]);
+			j++;
+			System.out.print(" ");
+		}
+	}
+	public static void Intersect(int []A, int []B){
+		int i=0,j=0;
+		for(;i<A.length && j<B.length ;){
+			if(A[i]<B[j]){
+				i++;
+			}else if(A[i]>B[j]){
+				j++;
+			}else{
+				System.out.print(A[i]);
+				i++;
+				j++;
+			}
+			System.out.print(" ");
+		}
+	}
+
+}
